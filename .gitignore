@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Test outputs
+tests/sample_data/*_report.html
+tests/sample_data/*_draft.html
+tests/sample_data/test_report.html
+tests/sample_data/cli_*.html
+
+# Temp files
+*.tmp
+*.temp
+~$*
