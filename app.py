@@ -389,8 +389,6 @@ if st.session_state.survey_def is not None:
                 arrow = "→" if stage.stage_id > 1 else ""
                 st.markdown(f"**阶段 {stage.stage_id}:** {arrow} {' | '.join(method_names)}")
             st.caption("同阶段方法可并行执行；箭头表示依赖顺序")
-            </div>
-            """, unsafe_allow_html=True)
 
         # ── Method selection (persistent via session_state) ──
         st.markdown("#### ✅ 选择要执行的分析方法")
