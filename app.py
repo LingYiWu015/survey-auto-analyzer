@@ -196,7 +196,8 @@ if uploaded_file:
 
     # Track file change: clear analysis state when a new file is uploaded
     file_id = f"{uploaded_file.name}_{uploaded_file.size}"
-    if st.session_state.get("_last_file_id") != file_id:
+    last_file_id = st.session_state.get("_last_file_id")
+    if last_file_id is None or last_file_id != file_id:
         # New file — reset analysis state
         for key in ["survey_def", "recommendations", "scored_methods",
                      "llm_result", "execution_report", "selected_methods",
@@ -229,7 +230,10 @@ if uploaded_file:
         )
 
         # Editable type corrections
-        corrections = st.session_state.get("_type_corrections", {})
+        corrections = st.session_state.get("_type_corrections")
+        if corrections is None:
+            corrections = {}
+            st.session_state["_type_corrections"] = corrections
         with st.expander("✏️ 修正题目类型（可选）"):
             for _, row in display_df.iterrows():
                 col_name = row["题目"]
