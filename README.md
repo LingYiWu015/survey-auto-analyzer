@@ -4,21 +4,31 @@
 
 ## 安装
 
+### 从 GitHub 安装（推荐）
+
 ```bash
-# 基础安装（核心统计方法）
-pip install survey-auto-analyzer
+# 基础安装（核心统计方法，~50MB）
+pip install git+https://github.com/LingYiWu015/survey-auto-analyzer.git
 
-# 含文本分析支持
-pip install survey-auto-analyzer[nlp]
+# 含文本分析支持（jieba, snownlp, gensim）
+pip install "survey-auto-analyzer[nlp] @ git+https://github.com/LingYiWu015/survey-auto-analyzer.git"
 
-# 含结构方程模型支持
-pip install survey-auto-analyzer[sem]
+# 含结构方程模型支持（semopy, prince）
+pip install "survey-auto-analyzer[sem] @ git+https://github.com/LingYiWu015/survey-auto-analyzer.git"
 
-# 含可视化增强
-pip install survey-auto-analyzer[viz]
+# 含可视化增强（plotly, seaborn, wordcloud）
+pip install "survey-auto-analyzer[viz] @ git+https://github.com/LingYiWu015/survey-auto-analyzer.git"
 
-# 全量安装
-pip install survey-auto-analyzer[all]
+# 全量安装（包含所有可选依赖）
+pip install "survey-auto-analyzer[all] @ git+https://github.com/LingYiWu015/survey-auto-analyzer.git"
+```
+
+### 本地开发安装
+
+```bash
+git clone https://github.com/LingYiWu015/survey-auto-analyzer.git
+cd survey-auto-analyzer
+pip install -e ".[all]"
 ```
 
 ## 快速开始
